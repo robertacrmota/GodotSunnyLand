@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu2mimw544bhr"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_bty2d"]
+[ext_resource type="Texture2D" uid="uid://hr3xelh6e5ji" path="res://AssetsPack/Sunny Land houses/Sunny Land Trees Props Pack/previews/all-bg.png" id="3_1lx4f"]
+[ext_resource type="PackedScene" uid="uid://8obb7d6pgtfw" path="res://Environment/bg.tscn" id="3_fioqw"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_bty2d")
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 425.0
+offset_top = 171.0
+offset_right = 664.0
+offset_bottom = 261.0
+text = "PLAY"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 428.0
+offset_top = 333.0
+offset_right = 667.0
+offset_bottom = 423.0
+text = "QUIT"
+
+[node name="ParallaxBg" parent="." instance=ExtResource("3_fioqw")]
+
+[node name="All-bg" type="Sprite2D" parent="."]
+position = Vector2(372, -147)
+texture = ExtResource("3_1lx4f")
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
